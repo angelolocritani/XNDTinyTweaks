@@ -14,9 +14,9 @@ namespace TinyTweaks
                 // Pass __state as true if the terrain pump is a moisture pump and isn't yet finished
                 if (TinyTweaksSettings.autoRemoveMoisturePumps && __instance is CompTerrainPumpDry)
                 {
-                    var progressDays = ___progressTicks / (float) GenDate.TicksPerDay;
+                    var progressDays = ___progressTicks / (float)GenDate.TicksPerDay;
                     var progressPercentage =
-                        progressDays / ((CompProperties_TerrainPump) __instance.props).daysToRadius;
+                        progressDays / ((CompProperties_TerrainPump)__instance.props).daysToRadius;
                     __state = progressPercentage < 1;
                 }
                 else
@@ -33,9 +33,9 @@ namespace TinyTweaks
                     return;
                 }
 
-                var progressDays = ___progressTicks / (float) GenDate.TicksPerDay;
+                var progressDays = ___progressTicks / (float)GenDate.TicksPerDay;
                 var progressPercentage =
-                    progressDays / ((CompProperties_TerrainPump) __instance.props).daysToRadius;
+                    progressDays / ((CompProperties_TerrainPump)__instance.props).daysToRadius;
                 if (!(progressPercentage >= 1))
                 {
                     return;

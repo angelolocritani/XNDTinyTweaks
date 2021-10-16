@@ -51,7 +51,7 @@ namespace TinyTweaks
         {
             if (signal == AutoRebuildSignal && autoRebuild)
             {
-                GenConstruct.PlaceBlueprintForBuild(parent.def, parent.Position, previousMap, parent.Rotation,
+                GenConstruct.PlaceBlueprintForBuild_NewTemp(parent.def, parent.Position, previousMap, parent.Rotation,
                     Faction.OfPlayer, parent.Stuff);
             }
 

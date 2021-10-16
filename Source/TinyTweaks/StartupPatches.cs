@@ -65,7 +65,7 @@ namespace TinyTweaks
                 }
 
                 // If the def has RaceProps and RaceProps are humanlike, add CompSkillTrackerCache to it
-                if (tDef.race is {Humanlike: true})
+                if (tDef.race is { Humanlike: true })
                 {
                     tDef.AddComp(typeof(CompSkillRecordCache));
                 }
@@ -91,7 +91,7 @@ namespace TinyTweaks
                         BindingFlags.NonPublic | BindingFlags.Static);
                 foreach (var dcDef in CategoriesToRemove)
                 {
-                    defDatabaseRemove?.Invoke(null, new object[] {dcDef});
+                    defDatabaseRemove?.Invoke(null, new object[] { dcDef });
                 }
             }
 

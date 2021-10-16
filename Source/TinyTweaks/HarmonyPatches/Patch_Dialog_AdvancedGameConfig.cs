@@ -26,7 +26,7 @@ namespace TinyTweaks
                     var instruction = codeInstruction;
 
                     // Look for the 'NewColumn' call for the season radio button list column; put our DoRandomStartingSeasonButton call just before
-                    if (instruction.opcode == OpCodes.Ldstr && (string) instruction.operand == "MapStartSeasonDefault")
+                    if (instruction.opcode == OpCodes.Ldstr && (string)instruction.operand == "MapStartSeasonDefault")
                     {
 #if DEBUG
                         Log.Message("Dialog_AdvancedGameConfig.DoWindowContents match 1 of 1");
@@ -56,7 +56,7 @@ namespace TinyTweaks
                 if (listing.ButtonText("Randomize".Translate()))
                 {
                     Find.GameInitData.startingSeason =
-                        (Season) Rand.RangeInclusive((int) Season.Spring, (int) Season.Winter);
+                        (Season)Rand.RangeInclusive((int)Season.Spring, (int)Season.Winter);
                 }
 
                 listing.Gap(6);

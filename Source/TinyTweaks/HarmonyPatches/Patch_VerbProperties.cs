@@ -61,7 +61,7 @@ namespace TinyTweaks
                 }
 
                 // Factor in equipment stuff
-                if (equipment is {Stuff: { }} && instance.meleeDamageDef != null)
+                if (equipment is { Stuff: { } } && instance.meleeDamageDef != null)
                 {
                     armourPenetration *=
                         equipment.Stuff.GetStatValueAbstract(instance.meleeDamageDef.armorCategory.multStat);

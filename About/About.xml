@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
   <name>[XND] Tiny Tweaks (Continued)</name>
   <packageId>Mlie.XNDTinyTweaks</packageId>
@@ -23,7 +23,7 @@
     <li>VanillaExpanded.VFEProduction</li>
     <li>LWM.DeepStorage</li>
   </loadAfter>
-  <description>[img]https://i.imgur.com/WAEzk68.png[/img]
+  <description>[img]https://i.imgur.com/buuPQel.png[/img]
 Update of XeoNovaDans mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=2017485672
 
@@ -31,7 +31,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=2017485672
 - Should no longer clash with LWM Deep Storage
 - Russian translation added, via Reiquard
 
-[img]https://i.imgur.com/7Gzt3Rg.png[/img]
+[img]https://i.imgur.com/pufA0kM.png[/img]
 
 [table]
     [tr]
@@ -40,23 +40,23 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=2017485672
     [/tr]
 [/table]
 	
-[img]https://i.imgur.com/NOW7jU1.png[/img]
+[img]https://i.imgur.com/Z4GOv8H.png[/img]
 [h1][b]Translations[/b][/h1]
 日本語 - Proxyer
 简体中文 - HawnHan
 
 [h1][b]Overview[/b][/h1]
-This is my shot at a [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1366888108][b]4M Mehni Misc Modifications[/b][/url] / [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1339135272][b]TD Enhancement Pack[/b][/url]-type mod - a collection of many small improvements I&apos;d personally like to see in RimWorld, all implemented and bundled into one mod, fully configurable through mod settings!
+This is my shot at a [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1366888108][b]4M Mehni Misc Modifications[/b][/url] / [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1339135272][b]TD Enhancement Pack[/b][/url]-type mod - a collection of many small improvements I'd personally like to see in RimWorld, all implemented and bundled into one mod, fully configurable through mod settings!
 
-Here&apos;s just some of what Tiny Tweaks currently has to offer:
+Here's just some of what Tiny Tweaks currently has to offer:
 [list]
 [*]Animal medical alerts - no more bonded animals bleeding out without notice!
 [*]Caravan food restrictions - assign food restrictions for your caravans
 [*]Night Owls automatically have their timetables set to the correct 11 AM - 7 PM sleeping schedule - no more -10 mood debuffs!
-[*]Being in a medical bed no longer hides any &apos;Colonist needs treatment&apos; alerts
-[*]Vanilla-style label capitalisation from mod-added items (e.g. &apos;Hand Cannon&apos; becomes &apos;hand cannon&apos;)
-[*]Fixed melee weapon AP scaling - spearhead attack AP no longer ignores the weapon&apos;s material&apos;s damage multipliers
-[*]Delayed skill decay - if a substantial amount of exp is gained, skill decay won&apos;t happen instantly
+[*]Being in a medical bed no longer hides any 'Colonist needs treatment' alerts
+[*]Vanilla-style label capitalisation from mod-added items (e.g. 'Hand Cannon' becomes 'hand cannon')
+[*]Fixed melee weapon AP scaling - spearhead attack AP no longer ignores the weapon's material's damage multipliers
+[*]Delayed skill decay - if a substantial amount of exp is gained, skill decay won't happen instantly
 [/list]
 
 Each of these can be individually enabled and disabled in mod settings, and there are plenty more features too!
@@ -67,7 +67,7 @@ Powered by the Harmony Patch Library.
 [b]Mods:[/b]
 Must be loaded after Vanilla Furniture Expanded - Production for alphabetical bill lists to work on workbenches by that mod.
 
-Should be fully compatible with all other mods. I also recommend using this with 4M Mehni&apos;s Misc Modifications and TD Enhancement Pack to get even more of the little things improved!
+Should be fully compatible with all other mods. I also recommend using this with 4M Mehni's Misc Modifications and TD Enhancement Pack to get even more of the little things improved!
 
 [b]Saves:[/b]
 This can safely be added to and removed from ongoing savegames.
@@ -80,7 +80,7 @@ Marnador for their fantastic RimWorld-style font
 Additional thanks goes to BryanAldrich for the fix with the Androids mod
 
 
-[img]https://i.imgur.com/Rs6T6cr.png[/img]
+[img]https://i.imgur.com/PwoNOj4.png[/img]
 [list]
 [*] See if the the error persists if you just have this mod and its requirements active.
 [*] If not, try adding your other mods until it happens again.
@@ -89,6 +89,5 @@ Additional thanks goes to BryanAldrich for the fix with the Androids mod
 [*] Do not report errors by making a discussion-thread, I get no notification of that.
 [*] If you have the solution for a problem, please post it to the GitHub repository.
 [/list]
-
 </description>
 </ModMetaData>

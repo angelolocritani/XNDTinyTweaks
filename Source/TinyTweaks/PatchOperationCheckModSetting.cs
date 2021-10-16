@@ -23,7 +23,7 @@ namespace TinyTweaks
                 BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
             if (settingInfo != null)
             {
-                return (bool) settingInfo.GetValue(null);
+                return (bool)settingInfo.GetValue(null);
             }
 
             LogPatchOperationError($"{settingName} could not be found");
