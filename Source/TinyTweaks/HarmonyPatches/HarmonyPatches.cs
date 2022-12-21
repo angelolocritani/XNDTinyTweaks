@@ -1,17 +1,16 @@
 ﻿using Verse;
 
-namespace TinyTweaks
+namespace TinyTweaks;
+
+[StaticConstructorOnStartup]
+public static class HarmonyPatches
 {
-    [StaticConstructorOnStartup]
-    public static class HarmonyPatches
+    static HarmonyPatches()
     {
-        static HarmonyPatches()
-        {
 #if DEBUG
             Harmony.DEBUG = true;
 #endif
 
-            TinyTweaks.harmonyInstance.PatchAll();
-        }
+        TinyTweaks.harmonyInstance.PatchAll();
     }
 }

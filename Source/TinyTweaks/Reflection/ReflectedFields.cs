@@ -1,6 +1,5 @@
-﻿namespace TinyTweaks
+﻿namespace TinyTweaks;
+
+public static class ReflectedFields
 {
-    public static class ReflectedFields
-    {
-    }
 }

@@ -1,10 +1,9 @@
 ﻿using RimWorld;
 
-namespace TinyTweaks
+namespace TinyTweaks;
+
+[DefOf]
+public static class TraitDefOf
 {
-    [DefOf]
-    public static class TraitDefOf
-    {
-        public static TraitDef NightOwl;
-    }
+    public static TraitDef NightOwl;
 }

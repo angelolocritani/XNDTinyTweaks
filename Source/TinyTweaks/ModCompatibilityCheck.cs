@@ -2,23 +2,22 @@
 using System.Linq;
 using Verse;
 
-namespace TinyTweaks
+namespace TinyTweaks;
+
+[StaticConstructorOnStartup]
+public static class ModCompatibilityCheck
 {
-    [StaticConstructorOnStartup]
-    public static class ModCompatibilityCheck
+    public static bool DubsBadHygiene;
+
+    static ModCompatibilityCheck()
     {
-        public static bool DubsBadHygiene;
+        var loadedMods = ModsConfig.ActiveModsInLoadOrder.ToList();
 
-        static ModCompatibilityCheck()
+        foreach (var curMod in loadedMods)
         {
-            var loadedMods = ModsConfig.ActiveModsInLoadOrder.ToList();
-
-            foreach (var curMod in loadedMods)
+            if (curMod.PackageId.Equals("Dubwise.DubsBadHygiene", StringComparison.CurrentCultureIgnoreCase))
             {
-                if (curMod.PackageId.Equals("Dubwise.DubsBadHygiene", StringComparison.CurrentCultureIgnoreCase))
-                {
-                    DubsBadHygiene = true;
-                }
+                DubsBadHygiene = true;
             }
         }
     }

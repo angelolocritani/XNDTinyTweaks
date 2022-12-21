@@ -5,62 +5,61 @@ using HarmonyLib;
 using RimWorld;
 using Verse;
 
-namespace TinyTweaks
+namespace TinyTweaks;
+
+public static class Patch_Dialog_AdvancedGameConfig
 {
-    public static class Patch_Dialog_AdvancedGameConfig
+    [HarmonyPatch(typeof(Dialog_AdvancedGameConfig), nameof(Dialog_AdvancedGameConfig.DoWindowContents))]
+    [HarmonyPatch]
+    public static class DoWindowContents
     {
-        [HarmonyPatch(typeof(Dialog_AdvancedGameConfig), nameof(Dialog_AdvancedGameConfig.DoWindowContents))]
-        [HarmonyPatch]
-        public static class DoWindowContents
+        public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
-            {
 #if DEBUG
                 Log.Message("Transpiler start: Dialog_AdvancedGameConfig.DoWindowContents (1 match)");
 #endif
 
-                var instructionList = instructions.ToList();
+            var instructionList = instructions.ToList();
 
-                foreach (var codeInstruction in instructionList)
+            foreach (var codeInstruction in instructionList)
+            {
+                var instruction = codeInstruction;
+
+                // Look for the 'NewColumn' call for the season radio button list column; put our DoRandomStartingSeasonButton call just before
+                if (instruction.opcode == OpCodes.Ldstr && (string)instruction.operand == "MapStartSeasonDefault")
                 {
-                    var instruction = codeInstruction;
-
-                    // Look for the 'NewColumn' call for the season radio button list column; put our DoRandomStartingSeasonButton call just before
-                    if (instruction.opcode == OpCodes.Ldstr && (string)instruction.operand == "MapStartSeasonDefault")
-                    {
 #if DEBUG
                         Log.Message("Dialog_AdvancedGameConfig.DoWindowContents match 1 of 1");
 #endif
 
-                        var clone = instruction.Clone();
-                        instruction.opcode = OpCodes.Call;
-                        instruction.operand = AccessTools.Method(typeof(DoWindowContents),
-                            nameof(DoRandomStartingSeasonButton));
-                        yield return instruction; // DoRandomStartingSeasonButton(listing_Standard)
-                        yield return new CodeInstruction(OpCodes.Ldloc_0); // listing_Standard
-                        instruction = clone; // "MapStartSeasonDefault"
-                    }
-
-                    yield return instruction;
+                    var clone = instruction.Clone();
+                    instruction.opcode = OpCodes.Call;
+                    instruction.operand = AccessTools.Method(typeof(DoWindowContents),
+                        nameof(DoRandomStartingSeasonButton));
+                    yield return instruction; // DoRandomStartingSeasonButton(listing_Standard)
+                    yield return new CodeInstruction(OpCodes.Ldloc_0); // listing_Standard
+                    instruction = clone; // "MapStartSeasonDefault"
                 }
-            }
 
-            public static void DoRandomStartingSeasonButton(Listing_Standard listing)
+                yield return instruction;
+            }
+        }
+
+        public static void DoRandomStartingSeasonButton(Listing_Standard listing)
+        {
+            // Pick a season, any season
+            if (!TinyTweaksSettings.randomStartingSeason)
             {
-                // Pick a season, any season
-                if (!TinyTweaksSettings.randomStartingSeason)
-                {
-                    return;
-                }
-
-                if (listing.ButtonText("Randomize".Translate()))
-                {
-                    Find.GameInitData.startingSeason =
-                        (Season)Rand.RangeInclusive((int)Season.Spring, (int)Season.Winter);
-                }
-
-                listing.Gap(6);
+                return;
             }
+
+            if (listing.ButtonText("Randomize".Translate()))
+            {
+                Find.GameInitData.startingSeason =
+                    (Season)Rand.RangeInclusive((int)Season.Spring, (int)Season.Winter);
+            }
+
+            listing.Gap(6);
         }
     }
 }
